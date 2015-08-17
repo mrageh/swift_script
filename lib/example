@@ -1,0 +1,9 @@
+a = "my own file that works"
+print(a)
+
+class Boos:
+  func does_it_work:
+    "Yeah"
+
+obj = Boos.new
+print(obj.does_it_work)
