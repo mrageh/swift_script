@@ -14,7 +14,6 @@ token INDENT DEDENT
 token WHILE
 
 # Precedence table
-# Based on http://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B#Operator_precedence
 prechigh
   left  '.'
   right '!'
@@ -172,10 +171,10 @@ end
 ---- header
   require "swift_script"
 
+module SwiftScript
 ---- inner
-  # This code will be put as-is in the parser class
-  def parse(code, show_tokens=false)
-    @tokens = Lexer.new.tokenize(code) # Tokenize the code using our lexer
+  def parse(code, show_tokens=true)
+    @tokens = Lexer.new.tokenize(code)
     puts @tokens.inspect if show_tokens
     do_parse # Kickoff the parsing process
   end
@@ -183,3 +182,10 @@ end
   def next_token
     @tokens.shift
   end
+
+  def on_error(error_token_id, error_value, value_stack)
+    token_str = token_to_str(error_token_id)
+    raise ParseError.new(token_str, error_value, value_stack)
+  end
+---- footer
+end

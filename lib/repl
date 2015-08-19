@@ -1,12 +1,9 @@
 #!/usr/bin/env ruby
 #The SwiftScript language!
 #
-#usage:
-# ./swift_script example #to eval a file
-# ./swift_script #to start the REPL
 #
 
-$:.unshift "." #Fix for Ruby 1.9
+$:.unshift "."
 require 'swift_script'
 require 'readline'
 

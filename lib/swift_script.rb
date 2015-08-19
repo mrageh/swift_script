@@ -5,6 +5,7 @@ require "swift_script/parser"
 require "swift_script/nodes"
 require "swift_script/runtime"
 require "swift_script/interpreter"
+require "swift_script/parse_error"
 require "pry-byebug"
 require "racc"
 

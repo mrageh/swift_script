@@ -31,7 +31,7 @@ module SwiftScript
     code = <<-CODE
 if 1:
   if 2:
-    print "..."
+    print "A lot lol..."
     if false:
       pass
     print "done!"
@@ -45,7 +45,7 @@ print "The End"
           [:INDENT, 2],
             [:IF, "if"], [:NUMBER, 2],
             [:INDENT, 4],
-              [:IDENTIFIER, "print"], [:STRING, "..."], [:NEWLINE, "\n"],
+              [:IDENTIFIER, "print"], [:STRING, "A lot lol..."], [:NEWLINE, "\n"],
               [:IF, "if"], [:FALSE, "false"],
               [:INDENT, 6],
                 [:IDENTIFIER, "pass"],
